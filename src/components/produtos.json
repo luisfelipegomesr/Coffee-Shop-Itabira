@@ -1,0 +1,34 @@
+[
+    {
+        "id": "3",
+        "title": "Expresso",
+        "size": "EXG",
+        "data": "Essência do café em uma dose concentrada, preparada com grãos de café finamente moídos.",
+        "price": "R$ 5.00",
+        "imgPath": "https://www.paul.fr/media/catalog/product/2/0/2021_pack_dri_expresso_3.jpg?quality=80&bg-color=255,255,255&fit=bounds&height=700&width=700&canvas=700:700"
+    },
+    {
+        "id": "1",
+        "title": "Cappuccino",
+        "size": "M",
+        "data": "Uma xícara com um cremoso e delicoso Cappuccino com canela por cima.",
+        "price": "R$ 8.00",
+        "imgPath": "https://images.tcdn.com.br/img/img_prod/1146008/cappuccino_mamae_bebe_300g_171_1_4af216a7de20345811100d1eddd92097.jpg"
+    },
+    {
+        "id": "2",
+        "title": "Latte",
+        "size": "G",
+        "data": "Café suave e cremoso, feito com espresso e uma generosa quantidade de leite vaporizado.",
+        "price": "R$ 9.00",
+        "imgPath": "https://www.nescafe.com/pt/sites/default/files/2023-04/RecipeHero_CaramelLatte_1066x1066.jpg"
+    },
+    {
+        "id": "4",
+        "title": "Mocha",
+        "size": "P",
+        "data": "Combinação perfeita de café espresso e chocolate, resultando em uma bebida indulgente e reconfortante.",
+        "price": "R$ 10.00",
+        "imgPath": "https://www.receiteria.com.br/wp-content/uploads/receitas-de-mocha-0.jpg"
+    }
+]
