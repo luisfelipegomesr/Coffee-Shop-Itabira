@@ -1,19 +1,26 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import {
-    SafeAreaView, FlatList, StyleSheet, TouchableHighlight,
+    SafeAreaView, FlatList, StyleSheet, TouchableHighlight, Image, Text, Modal, View,
 } from 'react-native';
-import coffeData from './produtos.json';
 import Cafe from './Cafe';
 import { useNavigation } from '@react-navigation/native';
 import { useItem } from '../contexts/CoffeeContext';
 
 // CoffeeList recebe a lista de produtos da loja
 const CoffeeList = () => {
-    const navigation = useNavigation(); 
+    const navigation = useNavigation();
     const { setSelectedCoffee } = useItem();
 
-    return (      
-        <SafeAreaView style={styles.background}>           
+    const [coffeData, setCoffeData] = useState();
+    useEffect(() => {
+        fetch("https://coffee-shop-api-sigma.vercel.app/cardapio")
+            .then((respFetch) => respFetch.json())
+            .then((respJson) => setCoffeData(respJson))
+            .catch((erro) => console.warn(erro))
+    }, [])
+
+    return (
+        <View style={styles.background}>
             {/* Produtos do Banco de Dados */}
             <FlatList
                 data={coffeData}
@@ -24,21 +31,21 @@ const CoffeeList = () => {
                             setSelectedCoffee(item);
                             navigation.navigate('PaginaCafe');
                         }}
-                        style = { styles.container }
-                        onShowUnderlay = { separators.highlight}
-                        onHideUnderlay = { separators.unhighlight } >
-                        <Cafe 
+                        style={styles.container}
+                        onShowUnderlay={separators.highlight}
+                        onHideUnderlay={separators.unhighlight} >
+                        <Cafe
                             title={item.title}
                             size={item.size}
                             data={item.data}
                             price={item.price}
-                            imgPath={item.imgPath}
+                            imgpath={item.imgpath}
                         />
                     </TouchableHighlight>
                 )}
-            keyExtractor = { item => item.id }
+                keyExtractor={item => item.id}
             />
-        </SafeAreaView>
+        </View>
     );
 };
 
